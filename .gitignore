@@ -1,0 +1,8 @@
+node_modules/
+.next/
+test-results/
+*.log
+.vercel/
+.env*
+!.env.example
+playwright-report/

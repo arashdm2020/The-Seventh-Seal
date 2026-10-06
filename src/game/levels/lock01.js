@@ -1,0 +1,62 @@
+const symbols = [
+  "sun",
+  "moon",
+  "star",
+  "eye",
+  "mountain",
+  "diamond",
+  "circle",
+  "path",
+];
+export const lock01 = {
+  id: "alignment",
+  rings: [
+    {
+      id: "outer",
+      name: "Heaven",
+      radius: 230,
+      width: 54,
+      symbols,
+      initial: 2,
+      target: "sun",
+    },
+    {
+      id: "second",
+      name: "Earth",
+      radius: 172,
+      width: 50,
+      symbols: [...symbols.slice(3), ...symbols.slice(0, 3)],
+      initial: 3,
+      target: "mountain",
+    },
+    {
+      id: "third",
+      name: "Witness",
+      radius: 118,
+      width: 46,
+      symbols: [...symbols.slice(1), symbols[0]],
+      initial: 5,
+      target: "eye",
+    },
+    {
+      id: "inner",
+      name: "Way",
+      radius: 68,
+      width: 42,
+      symbols: [...symbols.slice(5), ...symbols.slice(0, 5)],
+      initial: 6,
+      target: "path",
+    },
+  ],
+  coupling: {
+    outer: [],
+    second: [{ id: "inner", direction: -1 }],
+    third: [{ id: "second", direction: 1 }],
+    inner: [],
+  },
+  hints: [
+    "The symbols aligned beneath the upper marker are the ones that matter.",
+    "The witness turns the earth with it. The earth turns the way backward. Set the witness before the earth, and the way last.",
+    "Read from outside inward: the sun above the mountain, the open eye above the branching path. Bring all four beneath the upper marker.",
+  ],
+};

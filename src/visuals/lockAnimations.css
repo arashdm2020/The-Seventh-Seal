@@ -1,0 +1,65 @@
+.unlocking .lock-ring {
+  animation: release 2.1s ease forwards;
+}
+.turn-response {
+  animation: gear-response 0.65s ease-out forwards;
+}
+.turn-response.direct {
+  stroke: #ead1a0;
+}
+.turn-response.coupled {
+  stroke: #b89758;
+  stroke-dasharray: 3 12;
+}
+@keyframes gear-response {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.solved .lock-ring {
+  opacity: 0.7;
+}
+.unlocking .seal-pulse {
+  animation: pulse 2s ease-out forwards;
+}
+.phase-unlocking .masthead,
+.phase-unlocking .clue-panel,
+.phase-unlocking .left-caption,
+.phase-unlocking .game-footer {
+  opacity: 0.3;
+  transition: opacity 1.5s;
+}
+@keyframes release {
+  0%,
+  25% {
+    translate: 0 0;
+  }
+  15%,
+  35% {
+    translate: 1px -1px;
+  }
+  45% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 0 7px;
+    opacity: 0.7;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    r: 40;
+  }
+  25% {
+    opacity: 1;
+    r: 45;
+  }
+  100% {
+    opacity: 0;
+    r: 275;
+  }
+}
